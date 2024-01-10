@@ -60,7 +60,7 @@ def Model_B():
         
         selection = input("Please Enter Key: ") 
         if selection =="0": 
-            Train_Evaluate_CNN_Model_TaskA()
+            Train_Evaluate_CNN_Model_TaskB()
             print("Model B CNN Trained and Evaluated")
             
         elif selection =="1":
