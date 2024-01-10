@@ -62,4 +62,4 @@ model.add(tf.keras.layers.Dense(9, activation='softmax'))
 # compile CNN model with ADAM optimizer
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=tf.keras.optimizers.Adam())
 # Train model
-cnn_model = model.fit(X_train,Y_train, epochs = 10, batch_size=512, callbacks=callback, validation_data = (X_val,Y_val))
+cnn_model = model.fit(X_train,Y_train, epochs = 10, batch_size=512, validation_data = (X_val,Y_val))
