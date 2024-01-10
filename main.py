@@ -20,7 +20,7 @@ while selection:
     elif selection =="1":
         Model_B() 
     elif selection =="2":
-        print('\nExited!\n')
+        print('\nMenu Exited!\n')
         exit()
     else:
       print("\n Invalid Choice. Re-eneter Key:\n") 
