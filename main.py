@@ -1,5 +1,5 @@
 from A.TaskA import Train_Evaluate_CNN_Model_TaskA, Load_Trained_CNN_Model_TaskA
-from B.TaskB import Train_Evaluate_CNN_Model_TaskB
+from B.TaskB import Train_Evaluate_CNN_Model_TaskB, Load_Trained_CNN_Model_TaskB
 def Model_A():
     selection = True
     while selection:
@@ -60,7 +60,7 @@ def Model_B():
         
         selection = input("Please Enter Key: ") 
         if selection =="0": 
-            Train_Evaluate_CNN_Model_TaskA()
+            Train_Evaluate_CNN_Model_TaskB()
             print("Model B CNN Trained and Evaluated")
             
         elif selection =="1":
@@ -75,10 +75,13 @@ def Model_B():
                 
                 selection = input("Please Enter Key: ") 
                 if selection =="0":
+                    Load_Trained_CNN_Model_TaskB(1)
                     print("\n1st Saved CNN Model Evaluated")
                 elif selection =="1":
+                    Load_Trained_CNN_Model_TaskB(2)
                     print("\n2nd Saved CNN Model Evaluated")
                 elif selection =="2":
+                    Load_Trained_CNN_Model_TaskB(3)
                     print("\n3rd Saved CNN Model Evaluated")
                 elif selection =="3":
                     print('\nExited!')

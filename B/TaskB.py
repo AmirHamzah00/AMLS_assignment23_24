@@ -139,4 +139,53 @@ def Train_Evaluate_CNN_Model_TaskB():
     heatmap.set(xlabel='Predicted', ylabel='Expected')
     # show all plots
     plt.show()
-    
+
+def Load_Trained_CNN_Model_TaskB(model_id):
+    # load the saved CNN Model based on ID
+    if model_id == 1:
+        model = tf.keras.models.load_model('B\Saved_Models_TaskB\Model_TaskB_1.keras')
+    elif model_id == 2:
+        model = tf.keras.models.load_model('B\Saved_Models_TaskB\Model_TaskB_2.keras')
+    elif model_id == 3:
+        model = tf.keras.models.load_model('B\Saved_Models_TaskB\Model_TaskB_3.keras')
+    else:
+        raise TypeError("Invalid Model ID!") # if ID invalid error is raised
+    # Predict test dataset with trained CNN model
+    y_pred = model.predict(X_test)
+    # Store predicted class in list
+    predicted = []
+    expected = y_test
+    for x in range(len(y_pred)):
+        prediction_set = y_pred[x]
+        max_index = np.argmax(prediction_set)
+        if max_index == 0:
+            predicted.append(0)
+        elif max_index == 1:
+            predicted.append(1)
+        elif max_index == 2:
+            predicted.append(2)
+        elif max_index == 3:
+            predicted.append(3)
+        elif max_index == 4:
+            predicted.append(4)
+        elif max_index == 5:
+            predicted.append(5)
+        elif max_index == 6:
+            predicted.append(6)
+        elif max_index == 7:
+            predicted.append(7)
+        elif max_index == 8:
+            predicted.append(8)
+        else:
+            raise TypeError("Incorrect Classification Index Found!")
+    # calculating the f-score
+    fscore = f1_score(expected, predicted, average='weighted')
+    print('the f-score is:', fscore)
+    print('the accuracy is:', accuracy_score(expected, predicted)*100)   
+    # Confusion Matrix created
+    cm = tf.math.confusion_matrix(expected, predicted)
+
+    plt.title('Confusion Matrix for Task B')
+    heatmap = sns.heatmap(cm, annot=True, cmap="Blues", annot_kws={'fontsize': 9, 'color':'k', 'alpha': 0.6, 'rotation': 'vertical', 'verticalalignment': 'center'})
+    heatmap.set(xlabel='Predicted', ylabel='Expected')
+    plt.show()
