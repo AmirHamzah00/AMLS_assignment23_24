@@ -12,38 +12,12 @@ def Model_A():
         
         selection = input("Please Enter Key: ") 
         if selection =="0": 
-            print("\nModel A CNN Trained and Evaluated")
-            
+            print("Model A CNN Trained and Evaluated")
         elif selection =="1":
-            selection = True
-            while selection:
-                print("\nPlease Select an Option:")
-                print("[0] 1st Saved CNN Model")
-                print("[1] 2nd Saved CNN Model")
-                print("[2] 3rd Saved CNN Model")
-                print("[3] Exit to Previous Selection Menu")
-                print()
-                
-                selection = input("Please Enter Key: ") 
-                if selection =="0": 
-                    Load_Trained_CNN_Model_TaskA(1)
-                    print("\n1st Saved CNN Model Evaluated")
-                elif selection =="1":
-                    Load_Trained_CNN_Model_TaskA(2)
-                    print("\n2nd Saved CNN Model Evaluated")
-                elif selection =="2":
-                    Load_Trained_CNN_Model_TaskA(3)
-                    print("\n3rd Saved CNN Model Evaluated")
-                elif selection =="3":
-                    print('\nExited!')
-                    Model_A()
-                else:
-                    print("\nInvalid Choice. Re-eneter Key.")
-                    
+            print("Saved Model A CNN Evaluated")
         elif selection =="2":
-            print('\nExited!')
-            selection_menu()
-            
+            print('\nExited!\n')
+            exit()
         else:
             print("\nInvalid Choice. Re-eneter Key.") 
 
