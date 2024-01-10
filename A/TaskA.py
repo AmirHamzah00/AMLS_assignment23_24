@@ -121,6 +121,43 @@ def Train_Evaluate_CNN_Model_TaskA():
     # show all plots
     plt.show()
 
+def Load_Trained_CNN_Model_TaskA(model_id):
+    # load the saved CNN Model based on ID
+    if model_id == 1:
+        model = tf.keras.models.load_model('A\Saved_Models_TaskA\Model_TaskA_1.keras')
+    elif model_id == 2:
+        model = tf.keras.models.load_model('A\Saved_Models_TaskA\Model_TaskA_2.keras')
+    elif model_id == 3:
+        model = tf.keras.models.load_model('A\Saved_Models_TaskA\Model_TaskA_3.keras')
+    else:
+        raise TypeError("Invalid Model ID!") # if ID invalid error is raised
+    # Predict test dataset with trained CNN model
+    y_pred = model.predict(X_test)
+    # predicted class is store in the list
+    predicted = []
+    expected = y_test
+    for x in range(len(y_pred)):
+        prediction_set = y_pred[x]
+        max_index = np.argmax(prediction_set)
+        if max_index == 0:
+            predicted.append(0)
+        elif max_index == 1:
+            predicted.append(1)
+        else:
+            raise TypeError("Incorrect Classification Index Found!")
+    # f-score and accuracy calc and display
+    fscore = f1_score(expected, predicted)
+    print('the f-score is: %.4f' % (fscore))
+    print('the accuracy is: %.2f' % (accuracy_score(expected, predicted)*100) + '%')
+
+    # Making the Confusion Matrix
+    cm = tf.math.confusion_matrix(expected, predicted)
+    # plot confusion matrix
+    plt.title('Confusion Matrix for Task A')
+    heatmap = sns.heatmap(cm, annot=True, cmap="Oranges")
+    heatmap.set(xlabel='Predicted', ylabel='Expected')
+    
+    plt.show()
             
 
 
