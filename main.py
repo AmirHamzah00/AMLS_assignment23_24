@@ -1,11 +1,42 @@
-from A.TaskA import CNN_ModelA
-
 def Model_A():
-    print("Model A CNN Exceuted")
-    CNN_ModelA()
+    selection = True
+    while selection:
+        print("\nPlease Select an Option:")
+        print("[0] Train and Evalute the CNN Model")
+        print("[1] Load and Evaluate Saved CNN Model")
+        print("[2] Exit")
+        print()
+        
+        selection = input("Please Enter Key: ") 
+        if selection =="0": 
+            print("Model A CNN Trained and Evaluated")
+        elif selection =="1":
+            print("Saved Model A CNN Evaluated")
+        elif selection =="2":
+            print('\nExited!\n')
+            exit()
+        else:
+            print("\nInvalid Choice. Re-eneter Key.") 
 
 def Model_B():
-    print("Model B CNN Exceuted")
+    selection = True
+    while selection:
+        print("\nPlease Select an Option:")
+        print("[0] Train and Evalute the CNN Model")
+        print("[1] Load and Evaluate Saved CNN Model")
+        print("[2] Exit")
+        print()
+        
+        selection = input("Please Enter Key: ") 
+        if selection =="0": 
+            print("Model A CNN Trained and Evaluated")
+        elif selection =="1":
+            print("Saved Model A CNN Evaluated")
+        elif selection =="2":
+            print('\nExited!\n')
+            exit()
+        else:
+            print("\nInvalid Choice. Re-eneter Key.") 
 
 selection = True
 while selection:
