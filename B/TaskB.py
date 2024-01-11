@@ -58,7 +58,6 @@ def Train_Evaluate_CNN_Model_TaskB():
     model.add(tf.keras.layers.Flatten())
     # hidden layer
     model.add(tf.keras.layers.Dense(128, activation='relu'))
-    model.add(tf.keras.layers.Dropout(0.2))  # added dropout layer
     # output layer
     model.add(tf.keras.layers.Dense(9, activation='softmax'))
     # Define learning rate schedule
@@ -69,7 +68,7 @@ def Train_Evaluate_CNN_Model_TaskB():
             return lr * tf.math.exp(-0.001)
     # created callback array
     callback = [tf.keras.callbacks.LearningRateScheduler(scheduler),
-                tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=30, verbose=1)]
+                tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=60, verbose=1)]
     # compile CNN model with ADAM optimizer and callbacks
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=tf.keras.optimizers.Adam())
     # train model
