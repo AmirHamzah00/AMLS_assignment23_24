@@ -13,4 +13,6 @@ Seaborn -> [0.12.2] </br>
 To run the code through the terminal, run the following command in the terminal:
 </br></br>
 python main.py
+</br></br>
+Note that the Dataset Folder is empty as instructed. Please load the MNIST dataset file before running the code.
 </font>
