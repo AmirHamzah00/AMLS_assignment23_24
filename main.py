@@ -1,3 +1,4 @@
+# function to execute CNN model for Task A
 def Model_A():
     from A.TaskA import Train_Evaluate_CNN_Model_TaskA, Load_Trained_CNN_Model_TaskA
     selection = True
@@ -46,7 +47,7 @@ def Model_A():
             
         else:
             print("\nInvalid Choice. Re-eneter Key.") 
-
+# function to execute CNN model for Task B
 def Model_B():
     from B.TaskB import Train_Evaluate_CNN_Model_TaskB, Load_Trained_CNN_Model_TaskB
     selection = True
@@ -94,7 +95,7 @@ def Model_B():
             selection_menu()
         else:
             print("\nInvalid Choice. Re-eneter Key.")
-        
+# SeLection Menu to Select which task to execute   
 def selection_menu():
     selection = True
     while selection:
