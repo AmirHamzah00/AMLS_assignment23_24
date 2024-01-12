@@ -1,6 +1,5 @@
-from A.TaskA import Train_Evaluate_CNN_Model_TaskA, Load_Trained_CNN_Model_TaskA
-from B.TaskB import Train_Evaluate_CNN_Model_TaskB, Load_Trained_CNN_Model_TaskB
 def Model_A():
+    from A.TaskA import Train_Evaluate_CNN_Model_TaskA, Load_Trained_CNN_Model_TaskA
     selection = True
     while selection:
         print("\nTask A Selection Menu")
@@ -49,6 +48,7 @@ def Model_A():
             print("\nInvalid Choice. Re-eneter Key.") 
 
 def Model_B():
+    from B.TaskB import Train_Evaluate_CNN_Model_TaskB, Load_Trained_CNN_Model_TaskB
     selection = True
     while selection:
         print("\nTask B Selection Menu")

@@ -13,6 +13,4 @@ Seaborn -> [0.12.2] </br>
 To run the code through the terminal, run the following command in the terminal:
 </br></br>
 python main.py
-</br></br>
-Alternately, the folders A and B corresponding to the tasks contain Jupyter Notebooks that could also run the code.
 </font>
